@@ -32,14 +32,14 @@ export function FinalCTA() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href="mailto:contact@zafirok.com"
+              href="mailto:support@creatego.net"
               className="group flex items-center gap-2 rounded-2xl bg-sapphire-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-sapphire-600/40 transition-all duration-200 hover:bg-sapphire-400 hover:shadow-sapphire-500/50"
             >
               Programează un demo
               <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
-              href="mailto:contact@zafirok.com"
+              href="mailto:support@creatego.net"
               className="rounded-2xl border border-line bg-ink/40 px-8 py-4 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
             >
               Contactează-ne
@@ -58,8 +58,8 @@ export function FinalCTA() {
             <Logo sublabel="Business Systems" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-500">
               Ecosistem de sisteme software pentru afaceri: CRM, service auto,
-              contabilitate și construcții. Un singur partener, toată afacerea
-              acoperită.
+              contabilitate, construcții și producție la comandă. Un singur
+              partener, toată afacerea acoperită.
             </p>
           </div>
 
@@ -69,17 +69,19 @@ export function FinalCTA() {
             </h3>
             <ul className="mt-4 space-y-2.5 text-sm">
               {[
-                "Zafirok CRM",
-                "Zafirok Auto Service",
-                "Zafirok Accounting",
-                "Zafirok Construction",
-              ].map((p) => (
-                <li key={p}>
+                { name: "Zafirok Auto Service", href: "https://auto.zafirok.com/" },
+                { name: "Zafirok Accounting", href: "https://accounting.zafirok.com/" },
+                { name: "Zafirok Construction", href: "https://construction.zafirok.com/" },
+                { name: "Zafirok Producție la Comandă", href: "#produse" },
+              ].map((product) => (
+                <li key={product.name}>
                   <a
-                    href="#produse"
+                    href={product.href}
+                    target={product.href.startsWith("http") ? "_blank" : undefined}
+                    rel={product.href.startsWith("http") ? "noreferrer" : undefined}
                     className="text-slate-500 transition-colors duration-200 hover:text-white"
                   >
-                    {p}
+                    {product.name}
                   </a>
                 </li>
               ))}
@@ -101,6 +103,14 @@ export function FinalCTA() {
               </li>
               <li>
                 <a
+                  href="/despre"
+                  className="text-slate-500 transition-colors duration-200 hover:text-white"
+                >
+                  Despre noi
+                </a>
+              </li>
+              <li>
+                <a
                   href="#testimoniale"
                   className="text-slate-500 transition-colors duration-200 hover:text-white"
                 >
@@ -109,10 +119,10 @@ export function FinalCTA() {
               </li>
               <li>
                 <a
-                  href="mailto:contact@zafirok.com"
+                  href="mailto:support@creatego.net"
                   className="text-slate-500 transition-colors duration-200 hover:text-white"
                 >
-                  contact@zafirok.com
+                  support@creatego.net
                 </a>
               </li>
             </ul>

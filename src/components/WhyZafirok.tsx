@@ -98,11 +98,13 @@ export function WhyZafirok() {
             Ecosistem
           </span>
           <h2 className="font-display mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Construit să lucreze <span className="text-gradient">împreună</span>
+            Alegi ce ai nevoie. <span className="text-gradient">Extinzi când crești.</span>
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-400">
-            Nu vindem patru aplicații separate. Construim un singur ecosistem în
-            care fiecare modul îl face pe celălalt mai valoros.
+            Zafirok este construit modular: activezi doar funcțiile de care are
+            nevoie afacerea ta și plătești separat pentru fiecare modul. Când
+            adaugi un modul nou, acesta se conectează instant cu datele și
+            procesele pe care le folosești deja.
           </p>
         </motion.div>
 

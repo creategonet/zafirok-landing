@@ -6,24 +6,10 @@ import {
   IconCalculator,
   IconCheck,
   IconHardHat,
-  IconUsers,
   IconWrench,
 } from "./icons";
 
 const products = [
-  {
-    name: "Zafirok CRM",
-    system: "Customer Relationship System",
-    tagline: "Relații care aduc venit.",
-    description:
-      "Pipeline vizual, istoric complet al clienților și automatizări care nu lasă niciun lead să se piardă.",
-    features: ["Pipeline vizual de vânzări", "Automatizări & follow-up", "Rapoarte de conversie"],
-    icon: IconUsers,
-    accentText: "text-sky-400",
-    accentBg: "bg-sky-400/10",
-    accentBorder: "hover:border-sky-400/40",
-    accentGlow: "bg-sky-500/20",
-  },
   {
     name: "Zafirok Auto Service",
     system: "Auto Service System",
@@ -36,6 +22,7 @@ const products = [
     accentBg: "bg-cyan-400/10",
     accentBorder: "hover:border-cyan-400/40",
     accentGlow: "bg-cyan-500/20",
+    href: "https://auto.zafirok.com/",
   },
   {
     name: "Zafirok Accounting",
@@ -49,6 +36,7 @@ const products = [
     accentBg: "bg-emerald-400/10",
     accentBorder: "hover:border-emerald-400/40",
     accentGlow: "bg-emerald-500/20",
+    href: "https://accounting.zafirok.com/",
   },
   {
     name: "Zafirok Construction",
@@ -62,6 +50,21 @@ const products = [
     accentBg: "bg-amber-400/10",
     accentBorder: "hover:border-amber-400/40",
     accentGlow: "bg-amber-500/20",
+    href: "https://construction.zafirok.com/",
+  },
+  {
+    name: "Zafirok Producție la Comandă",
+    system: "Produs în dezvoltare",
+    tagline: "Producția la comandă, organizată cap-coadă.",
+    description:
+      "CRM și ERP specializat pentru producătorii la comandă: mobilă, ferestre, confecții metalice, scări și alte produse realizate după cerințele clientului.",
+    features: ["Comenzi și clienți într-un singur loc", "Planificarea producției", "Costuri și progres în timp real"],
+    icon: IconHardHat,
+    accentText: "text-violet-400",
+    accentBg: "bg-violet-400/10",
+    accentBorder: "hover:border-violet-400/40",
+    accentGlow: "bg-violet-500/20",
+    href: "#contact",
   },
 ];
 
@@ -80,7 +83,7 @@ export function Products() {
             Produse
           </span>
           <h2 className="font-display mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
-            Patru sisteme.{" "}
+            Sisteme specializate.{" "}
             <span className="text-gradient">O singură sursă de adevăr.</span>
           </h2>
           <p className="mt-5 text-lg leading-relaxed text-slate-400">
@@ -114,7 +117,7 @@ export function Products() {
                   >
                     <product.icon className="h-7 w-7" />
                   </div>
-                  <span className="rounded-full border border-line px-3 py-1 text-[0.65rem] font-medium tracking-[0.18em] text-slate-500 uppercase">
+                  <span className={`rounded-full border px-3 py-1 text-[0.65rem] font-semibold tracking-[0.16em] uppercase ${product.system === "Produs în dezvoltare" ? "border-violet-400/40 bg-violet-400/10 text-violet-300" : "border-line text-slate-500"}`}>
                     {product.system}
                   </span>
                 </div>
@@ -142,10 +145,12 @@ export function Products() {
                 </ul>
 
                 <a
-                  href="#contact"
+                  href={product.href}
+                  target={product.href.startsWith("http") ? "_blank" : undefined}
+                  rel={product.href.startsWith("http") ? "noreferrer" : undefined}
                   className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
                 >
-                  Vezi detalii
+                  {product.system === "Produs în dezvoltare" ? "Disponibil în curând" : "Vezi produsul"}
                   <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
               </div>

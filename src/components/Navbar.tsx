@@ -4,15 +4,16 @@ import { useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Logo } from "./Logo";
 import { IconMenu, IconX } from "./icons";
+import { useLanguage, type Language } from "./LanguageProvider";
 
 const links = [
-  { href: "#produse", label: "Produse" },
-  { href: "#ecosistem", label: "Ecosistem" },
-  { href: "#testimoniale", label: "Clienți" },
-  { href: "#contact", label: "Contact" },
+  { href: "/produse", label: "Produse" },
+  { href: "/despre", label: "Despre" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export function Navbar() {
+  const { language, setLanguage } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
   const { scrollY } = useScroll();
@@ -33,7 +34,7 @@ export function Navbar() {
             : "border-transparent bg-transparent"
         }`}
       >
-        <a href="#" aria-label="Zafirok — pagina principală">
+        <a href="/" aria-label="Zafirok — pagina principală">
           <Logo />
         </a>
 
@@ -50,8 +51,15 @@ export function Navbar() {
         </nav>
 
         <div className="flex items-center gap-3">
+          <div className="flex rounded-lg border border-line bg-ink/50 p-1" aria-label="Selectează limba">
+            {(["ro", "ru", "en"] as Language[]).map((code) => (
+              <button key={code} type="button" onClick={() => setLanguage(code)} className={`cursor-pointer rounded-md px-2 py-1 text-[0.65rem] font-bold uppercase transition-colors ${language === code ? "bg-sapphire-500 text-white" : "text-slate-500 hover:text-white"}`}>
+                {code}
+              </button>
+            ))}
+          </div>
           <a
-            href="#contact"
+            href="/contact"
             className="hidden rounded-xl bg-sapphire-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-sapphire-400 sm:block"
           >
             Solicită demo
@@ -90,7 +98,7 @@ export function Navbar() {
             ))}
             <li>
               <a
-                href="#contact"
+                href="/contact"
                 onClick={() => setOpen(false)}
                 className="mt-2 block rounded-xl bg-sapphire-500 px-4 py-3 text-center text-sm font-semibold text-white transition-colors duration-200 hover:bg-sapphire-400"
               >

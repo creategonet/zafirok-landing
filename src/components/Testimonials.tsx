@@ -6,29 +6,29 @@ import { IconStar } from "./icons";
 const testimonials = [
   {
     quote:
-      "Înainte pierdeam lead-uri prin mail-uri și agende. Acum tot pipeline-ul e într-un singur loc și nimic nu ne mai scapă. Vânzările au crescut cu 30% în primul an.",
-    name: "Andrei Popa",
-    role: "Director Vânzări",
-    company: "TehnoGrup",
-    initials: "AP",
+      "Acum, datorită CRM-ului pentru electricieni și renovări, pot să țin sub control lucrul echipei mele: pe cine plătesc, ce volum face fiecare zilnic și orele de muncă. Înainte țineam totul în minte și aveam un carnețel în care era mereu încurcătură. Trebuia să calculez constant, era greu să țin cont de detaliile mici și nu mai știam cât câștig cu adevărat de pe fiecare obiect. Acum înregistrez toate proiectele în CRM și este atât de ușor să țin evidența, chiar e o plăcere. La început lucram în soft de pe telefon, dar apoi am trecut pe tabletă — îmi place să văd cifrele mai mari. Recomand: este mai simplu decât să ții calculele pe foaie și îți ia mai puțin timp decât să notezi în caiet.",
+    name: "Valeriu Starciuc",
+    role: "Electricitate și renovări",
+    company: "ElectricSigur.com",
+    initials: "VS",
     accent: "bg-sky-400/15 text-sky-300",
   },
   {
     quote:
-      "Programări, devize, istoric pe mașină — totul digital. Clienții primesc SMS când mașina e gata, iar noi am scăpat de dosarele cu hârtii. Nu ne-am mai întoarce.",
-    name: "Mihai Ionescu",
-    role: "Administrator",
-    company: "AutoExpert Service",
-    initials: "MI",
+      "Căutam un CRM pentru service auto și, când am văzut publicitatea Zafirok, mi-a plăcut ce am văzut. Am scris un simplu comentariu că sunt interesată și nu credeam că o să revină cineva. Dar echipa a fost foarte receptivă atât la început, cât și ulterior. Le-am sugerat câteva îmbunătățiri și le-au implementat foarte rapid. Este un sistem digital modern pentru service auto.",
+    name: "Irina Istrati",
+    role: "Service auto",
+    company: "Optim Prime Motors",
+    initials: "II",
     accent: "bg-cyan-400/15 text-cyan-300",
   },
   {
     quote:
-      "Închiderea de lună dura o săptămână. Cu Zafirok Accounting, facturile intră singure, iar rapoartele fiscale sunt gata oricând. E ca și cum am mai angajat un om.",
-    name: "Elena Dumitrescu",
-    role: "Contabil Șef",
-    company: "ConstructPro",
-    initials: "ED",
+      "Un prieten care folosește deja Zafirok drept CRM pentru service-ul lui auto ne-a recomandat să ne înregistrăm. După doar câteva minute de utilizare, am înțeles că este ceea ce avem nevoie. Având câteva filiale, s-a dovedit a fi cea mai bună soluție. Este ușor de folosit, iar totul este gândit exact pentru nevoile pe care le avem într-un service auto.",
+    name: "Vitalie Maican",
+    role: "Service auto",
+    company: "BimmerMD",
+    initials: "VM",
     accent: "bg-emerald-400/15 text-emerald-300",
   },
 ];

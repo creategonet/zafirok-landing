@@ -6,7 +6,6 @@ import {
   IconArrowRight,
   IconCalculator,
   IconHardHat,
-  IconUsers,
   IconWrench,
 } from "./icons";
 
@@ -55,6 +54,37 @@ function OrbitChip({
   );
 }
 
+const constructionAreas = [
+  { label: "Roof", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+  { label: "Facade", position: "top-[28%] right-0 translate-x-1/2" },
+  { label: "Electrical", position: "bottom-0 right-[8%] translate-y-1/2" },
+  { label: "Interior", position: "bottom-0 left-[8%] translate-y-1/2" },
+  { label: "Concrete Works", position: "top-[28%] left-0 -translate-x-1/2" },
+];
+
+function ConstructionCluster() {
+  return (
+    <div className="animate-orbit relative flex items-center justify-center" style={{ animationDuration: "30s" }}>
+      <div className="flex items-center gap-2 rounded-xl border border-line bg-surface/95 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-sm">
+        <IconHardHat className="h-4 w-4 text-amber-400" />
+        <span className="text-xs font-semibold whitespace-nowrap text-white">Construction</span>
+      </div>
+
+      <div className="animate-orbit absolute hidden h-[150px] w-[210px] rounded-[50%] border border-amber-400/15 sm:block" style={{ animationDuration: "18s" }}>
+        {constructionAreas.map((area) => (
+          <div key={area.label} className={`absolute ${area.position}`}>
+            <div className="animate-orbit-reverse" style={{ animationDuration: "18s" }}>
+              <span className="block rounded-lg border border-amber-400/20 bg-ink/90 px-2 py-1 text-[0.58rem] font-semibold whitespace-nowrap text-amber-100 shadow-md shadow-black/30 backdrop-blur-sm">
+                {area.label}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
 function OrbitSystem() {
   return (
     <div className="relative mx-auto aspect-square w-[320px] sm:w-[420px] lg:w-[480px]">
@@ -67,14 +97,6 @@ function OrbitSystem() {
         className="animate-orbit absolute inset-0 rounded-full border border-line"
         style={{ animationDuration: "38s" }}
       >
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
-          <OrbitChip
-            icon={<IconUsers className="h-4 w-4" />}
-            label="CRM"
-            accent="text-sky-400"
-            duration="38s"
-          />
-        </div>
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
           <OrbitChip
             icon={<IconCalculator className="h-4 w-4" />}
@@ -102,13 +124,7 @@ function OrbitSystem() {
           />
         </div>
         <div className="absolute top-1/2 right-0 -translate-y-1/2 translate-x-1/2">
-          <OrbitChip
-            icon={<IconHardHat className="h-4 w-4" />}
-            label="Construction"
-            accent="text-amber-400"
-            duration="30s"
-            reverse
-          />
+          <ConstructionCluster />
         </div>
         <div className="absolute top-0 left-1/2 h-1.5 w-1.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sapphire-300" />
       </div>
@@ -124,7 +140,6 @@ function OrbitSystem() {
 }
 
 const marqueeItems = [
-  "CRM",
   "Auto Service",
   "Accounting",
   "Construction",
@@ -177,9 +192,9 @@ export function Hero() {
             variants={item}
             className="mt-6 max-w-lg text-lg leading-relaxed text-slate-400"
           >
-            CRM, service auto, contabilitate și construcții — patru sisteme
-            care vorbesc între ele, ca tu să vezi întreaga afacere dintr-o
-            singură privire.
+            Sisteme specializate pentru service auto, contabilitate și
+            construcții, cu module care lucrează împreună ca să vezi întreaga
+            afacere dintr-o singură privire.
           </motion.p>
 
           <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
@@ -203,7 +218,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-500"
           >
             <span>
-              <strong className="font-semibold text-white">4</strong> sisteme
+              <strong className="font-semibold text-white">3</strong> sisteme
               integrate
             </span>
             <span className="hidden h-4 w-px bg-line sm:block" />
