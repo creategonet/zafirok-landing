@@ -37,7 +37,7 @@ const products = [
     accentBg: "bg-emerald-400/10",
     accentBorder: "hover:border-emerald-400/40",
     accentGlow: "bg-emerald-500/20",
-    href: "https://accounting.zafirok.com/",
+    href: "#contact",
   },
   {
     name: "Zafirok Construction",
@@ -153,19 +153,23 @@ export function Products() {
                   ))}
                 </ul>
 
-                <a
-                  href={product.href}
-                  target={product.href.startsWith("http") ? "_blank" : undefined}
-                  rel={product.href.startsWith("http") ? "noreferrer" : undefined}
-                  className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
-                >
-                  {product.system === "Produs în dezvoltare"
-                    ? "Disponibil în curând"
-                    : "comingSoon" in product && product.comingSoon
-                      ? "Anunță-mă la lansare"
+                {"comingSoon" in product && product.comingSoon ? (
+                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+                    Disponibil în curând
+                  </span>
+                ) : (
+                  <a
+                    href={product.href}
+                    target={product.href.startsWith("http") ? "_blank" : undefined}
+                    rel={product.href.startsWith("http") ? "noreferrer" : undefined}
+                    className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
+                  >
+                    {product.system === "Produs în dezvoltare"
+                      ? "Disponibil în curând"
                       : "Vezi produsul"}
-                  <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-                </a>
+                    <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
+                  </a>
+                )}
               </div>
             </motion.article>
           ))}
