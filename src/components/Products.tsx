@@ -31,6 +31,7 @@ const products = [
     description:
       "Facturare, e-Factura și rapoarte fiscale într-un sistem care închide luna fără nopți pierdute.",
     features: ["Facturare & e-Factura", "Registre și jurnale automate", "Rapoarte fiscale la zi"],
+    comingSoon: true,
     icon: IconCalculator,
     accentText: "text-emerald-400",
     accentBg: "bg-emerald-400/10",
@@ -122,9 +123,17 @@ export function Products() {
                   </span>
                 </div>
 
-                <h3 className="font-display mt-6 text-2xl font-bold text-white">
-                  {product.name}
-                </h3>
+                <div className="mt-6 flex flex-wrap items-center gap-3">
+                  <h3 className="font-display text-2xl font-bold text-white">
+                    {product.name}
+                  </h3>
+                  {"comingSoon" in product && product.comingSoon && (
+                    <span className="inline-flex items-center gap-1.5 rounded-full border border-sapphire-400/40 bg-sapphire-500/15 px-3 py-1 text-[0.65rem] font-bold tracking-[0.15em] text-sapphire-300 uppercase">
+                      <span className="animate-pulse-dot h-1.5 w-1.5 rounded-full bg-sapphire-400" />
+                      În curând
+                    </span>
+                  )}
+                </div>
                 <p className={`mt-1 text-sm font-semibold ${product.accentText}`}>
                   {product.tagline}
                 </p>
@@ -150,7 +159,11 @@ export function Products() {
                   rel={product.href.startsWith("http") ? "noreferrer" : undefined}
                   className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
                 >
-                  {product.system === "Produs în dezvoltare" ? "Disponibil în curând" : "Vezi produsul"}
+                  {product.system === "Produs în dezvoltare"
+                    ? "Disponibil în curând"
+                    : "comingSoon" in product && product.comingSoon
+                      ? "Anunță-mă la lansare"
+                      : "Vezi produsul"}
                   <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                 </a>
               </div>
