@@ -5,11 +5,42 @@ import {
   IconArrowRight,
   IconCalculator,
   IconCheck,
+  IconFactory,
   IconHardHat,
   IconWrench,
 } from "./icons";
 
 const products = [
+  {
+    name: "Zafirok Construction",
+    system: "Construction System",
+    tagline: "Șantierul, sub control.",
+    description:
+      "Devize, etape de proiect, pontaj și costuri reale pe fiecare lucrare — vizibile în timp real, de oriunde.",
+    features: ["Devize și situații de lucrări", "Pontaj echipe & utilaje", "Costuri reale pe proiect"],
+    icon: IconHardHat,
+    accentText: "text-amber-400",
+    accentBg: "bg-amber-400/10",
+    accentBorder: "hover:border-amber-400/40",
+    accentGlow: "bg-amber-500/20",
+    href: "https://construction.zafirok.com/",
+    cta: "Vezi produsul",
+  },
+  {
+    name: "Zafirok Factory",
+    system: "Factory System",
+    tagline: "Fabrica ta, sub control.",
+    description:
+      "CRM și ERP pentru fabrici de case modulare, mobilă, ferestre, panouri sandwich, porți, garduri și bucătării la comandă.",
+    features: ["Comenzi și clienți într-un singur loc", "Planificarea producției", "Costuri și progres în timp real"],
+    icon: IconFactory,
+    accentText: "text-violet-400",
+    accentBg: "bg-violet-400/10",
+    accentBorder: "hover:border-violet-400/40",
+    accentGlow: "bg-violet-500/20",
+    href: "#contact",
+    cta: "Solicită un demo",
+  },
   {
     name: "Zafirok Auto Service",
     system: "Auto Service System",
@@ -23,6 +54,7 @@ const products = [
     accentBorder: "hover:border-cyan-400/40",
     accentGlow: "bg-cyan-500/20",
     href: "https://auto.zafirok.com/",
+    cta: "Vezi produsul",
   },
   {
     name: "Zafirok Accounting",
@@ -37,34 +69,6 @@ const products = [
     accentBg: "bg-emerald-400/10",
     accentBorder: "hover:border-emerald-400/40",
     accentGlow: "bg-emerald-500/20",
-    href: "#contact",
-  },
-  {
-    name: "Zafirok Construction",
-    system: "Construction System",
-    tagline: "Șantierul, sub control.",
-    description:
-      "Devize, etape de proiect, pontaj și costuri reale pe fiecare lucrare — vizibile în timp real, de oriunde.",
-    features: ["Devize și situații de lucrări", "Pontaj echipe & utilaje", "Costuri reale pe proiect"],
-    icon: IconHardHat,
-    accentText: "text-amber-400",
-    accentBg: "bg-amber-400/10",
-    accentBorder: "hover:border-amber-400/40",
-    accentGlow: "bg-amber-500/20",
-    href: "https://construction.zafirok.com/",
-  },
-  {
-    name: "Zafirok Producție la Comandă",
-    system: "Produs în dezvoltare",
-    tagline: "Producția la comandă, organizată cap-coadă.",
-    description:
-      "CRM și ERP specializat pentru producătorii la comandă: mobilă, ferestre, confecții metalice, scări și alte produse realizate după cerințele clientului.",
-    features: ["Comenzi și clienți într-un singur loc", "Planificarea producției", "Costuri și progres în timp real"],
-    icon: IconHardHat,
-    accentText: "text-violet-400",
-    accentBg: "bg-violet-400/10",
-    accentBorder: "hover:border-violet-400/40",
-    accentGlow: "bg-violet-500/20",
     href: "#contact",
   },
 ];
@@ -118,7 +122,7 @@ export function Products() {
                   >
                     <product.icon className="h-7 w-7" />
                   </div>
-                  <span className={`rounded-full border px-3 py-1 text-[0.65rem] font-semibold tracking-[0.16em] uppercase ${product.system === "Produs în dezvoltare" ? "border-violet-400/40 bg-violet-400/10 text-violet-300" : "border-line text-slate-500"}`}>
+                  <span className="rounded-full border border-line px-3 py-1 text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500 uppercase">
                     {product.system}
                   </span>
                 </div>
@@ -164,9 +168,7 @@ export function Products() {
                     rel={product.href.startsWith("http") ? "noreferrer" : undefined}
                     className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
                   >
-                    {product.system === "Produs în dezvoltare"
-                      ? "Disponibil în curând"
-                      : "Vezi produsul"}
+                    {product.cta}
                     <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
                   </a>
                 )}

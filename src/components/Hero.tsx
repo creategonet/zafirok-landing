@@ -5,6 +5,7 @@ import { LogoMark } from "./Logo";
 import {
   IconArrowRight,
   IconCalculator,
+  IconFactory,
   IconHardHat,
   IconWrench,
 } from "./icons";
@@ -55,11 +56,19 @@ function OrbitChip({
 }
 
 const constructionAreas = [
-  { label: "Roof", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
-  { label: "Facade", position: "top-[28%] right-0 translate-x-1/2" },
-  { label: "Electrical", position: "bottom-0 right-[8%] translate-y-1/2" },
+  { label: "Fațadă", position: "top-[28%] right-0 translate-x-1/2" },
+  { label: "Electricitate", position: "bottom-0 right-[8%] translate-y-1/2" },
   { label: "Interior", position: "bottom-0 left-[8%] translate-y-1/2" },
-  { label: "Concrete Works", position: "top-[28%] left-0 -translate-x-1/2" },
+  { label: "Lucrări din beton", position: "top-[28%] left-0 -translate-x-1/2" },
+];
+
+const factoryAreas = [
+  { label: "Case modulare", position: "top-0 left-1/2 -translate-x-1/2 -translate-y-1/2" },
+  { label: "Mobilă", position: "top-[22%] right-0 translate-x-1/2" },
+  { label: "Ferestre", position: "bottom-[12%] right-0 translate-x-1/2" },
+  { label: "Panouri sandwich", position: "bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2" },
+  { label: "Porți și garduri", position: "bottom-[12%] left-0 -translate-x-1/2" },
+  { label: "Bucătării la comandă", position: "top-[22%] left-0 -translate-x-1/2" },
 ];
 
 function ConstructionCluster() {
@@ -67,7 +76,7 @@ function ConstructionCluster() {
     <div className="animate-orbit relative flex items-center justify-center" style={{ animationDuration: "30s" }}>
       <div className="flex items-center gap-2 rounded-xl border border-line bg-surface/95 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-sm">
         <IconHardHat className="h-4 w-4 text-amber-400" />
-        <span className="text-xs font-semibold whitespace-nowrap text-white">Construction</span>
+        <span className="text-xs font-semibold whitespace-nowrap text-white">Construcții</span>
       </div>
 
       <div className="animate-orbit absolute hidden h-[150px] w-[210px] rounded-[50%] border border-amber-400/15 sm:block" style={{ animationDuration: "18s" }}>
@@ -75,6 +84,29 @@ function ConstructionCluster() {
           <div key={area.label} className={`absolute ${area.position}`}>
             <div className="animate-orbit-reverse" style={{ animationDuration: "18s" }}>
               <span className="block rounded-lg border border-amber-400/20 bg-ink/90 px-2 py-1 text-[0.58rem] font-semibold whitespace-nowrap text-amber-100 shadow-md shadow-black/30 backdrop-blur-sm">
+                {area.label}
+              </span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function FactoryCluster() {
+  return (
+    <div className="animate-orbit-reverse relative flex items-center justify-center" style={{ animationDuration: "38s" }}>
+      <div className="flex items-center gap-2 rounded-xl border border-line bg-surface/95 px-3 py-2 shadow-lg shadow-black/40 backdrop-blur-sm">
+        <IconFactory className="h-4 w-4 text-violet-400" />
+        <span className="text-xs font-semibold whitespace-nowrap text-white">Fabrică</span>
+      </div>
+
+      <div className="animate-orbit-reverse absolute hidden h-[150px] w-[210px] rounded-[50%] border border-violet-400/15 sm:block" style={{ animationDuration: "20s" }}>
+        {factoryAreas.map((area) => (
+          <div key={area.label} className={`absolute ${area.position}`}>
+            <div className="animate-orbit" style={{ animationDuration: "20s" }}>
+              <span className="block rounded-lg border border-violet-400/20 bg-ink/90 px-2 py-1 text-[0.58rem] font-semibold whitespace-nowrap text-violet-100 shadow-md shadow-black/30 backdrop-blur-sm">
                 {area.label}
               </span>
             </div>
@@ -100,10 +132,13 @@ function OrbitSystem() {
         <div className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-1/2">
           <OrbitChip
             icon={<IconCalculator className="h-4 w-4" />}
-            label="Accounting"
+            label="Contabilitate"
             accent="text-emerald-400"
             duration="38s"
           />
+        </div>
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <FactoryCluster />
         </div>
         <div className="absolute top-1/2 left-0 h-2 w-2 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sapphire-400" />
         <div className="absolute top-1/2 right-0 h-1.5 w-1.5 -translate-y-1/2 translate-x-1/2 rounded-full bg-cyan-400/70" />
@@ -117,7 +152,7 @@ function OrbitSystem() {
         <div className="absolute top-1/2 left-0 -translate-x-1/2 -translate-y-1/2">
           <OrbitChip
             icon={<IconWrench className="h-4 w-4" />}
-            label="Auto Service"
+            label="Service auto"
             accent="text-cyan-400"
             duration="30s"
             reverse
@@ -140,9 +175,10 @@ function OrbitSystem() {
 }
 
 const marqueeItems = [
-  "Auto Service",
-  "Accounting",
-  "Construction",
+  "Service auto",
+  "Contabilitate",
+  "Construcții",
+  "Fabrică",
   "Cloud",
   "Rapoarte în timp real",
   "Automatizări",
@@ -218,7 +254,7 @@ export function Hero() {
             className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-500"
           >
             <span>
-              <strong className="font-semibold text-white">3</strong> sisteme
+              <strong className="font-semibold text-white">4</strong> sisteme
               integrate
             </span>
             <span className="hidden h-4 w-px bg-line sm:block" />

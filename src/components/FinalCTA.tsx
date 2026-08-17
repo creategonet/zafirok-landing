@@ -58,7 +58,7 @@ export function FinalCTA() {
             <Logo sublabel="Business Systems" />
             <p className="mt-5 max-w-sm text-sm leading-relaxed text-slate-500">
               Ecosistem de sisteme software pentru afaceri: CRM, service auto,
-              contabilitate, construcții și producție la comandă. Un singur
+              contabilitate, construcții și fabrici. Un singur
               partener, toată afacerea acoperită.
             </p>
           </div>
@@ -72,7 +72,7 @@ export function FinalCTA() {
                 { name: "Zafirok Auto Service", href: "https://auto.zafirok.com/" },
                 { name: "Zafirok Accounting", href: "#produse" },
                 { name: "Zafirok Construction", href: "https://construction.zafirok.com/" },
-                { name: "Zafirok Producție la Comandă", href: "#produse" },
+                { name: "Zafirok Factory", href: "#produse" },
               ].map((product) => (
                 <li key={product.name}>
                   <a

@@ -6,7 +6,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 
 export const metadata: Metadata = {
   title: "Produse — Zafirok",
-  description: "Descoperă sistemele Zafirok pentru service auto, contabilitate, construcții și producție la comandă.",
+  description: "Descoperă sistemele Zafirok pentru construcții, fabrici, service auto și contabilitate.",
 };
 
 export default function ProductsPage() {

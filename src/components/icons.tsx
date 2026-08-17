@@ -60,6 +60,16 @@ export function IconHardHat(props: SVGProps<SVGSVGElement>) {
   );
 }
 
+export function IconFactory(props: SVGProps<SVGSVGElement>) {
+  return (
+    <svg {...base(props)}>
+      <path d="M3 21V9l6 3V9l6 3V4h4l2 17H3Z" />
+      <path d="M7 21v-4h3v4" />
+      <path d="M15 16h2" />
+    </svg>
+  );
+}
+
 export function IconRefresh(props: SVGProps<SVGSVGElement>) {
   return (
     <svg {...base(props)}>

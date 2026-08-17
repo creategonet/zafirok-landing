@@ -17,7 +17,7 @@ const spaceGrotesk = Space_Grotesk({
 export const metadata: Metadata = {
   title: "Zafirok — Ecosistem CRM & ERP pentru afacerea ta",
   description:
-    "Sisteme specializate pentru CRM, service auto, contabilitate, construcții și producție la comandă. De la primul contact cu clientul până la bilanț, totul într-un singur ecosistem.",
+    "Sisteme specializate pentru CRM, construcții, fabrici, service auto și contabilitate. De la primul contact cu clientul până la bilanț, totul într-un singur ecosistem.",
 };
 
 export default function RootLayout({
