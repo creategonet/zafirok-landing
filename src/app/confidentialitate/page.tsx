@@ -17,12 +17,17 @@ export default function PrivacyPage() {
     >
       <LegalSection number={1} title="Cine răspunde pentru datele tale">
         <p>
-          Operatorul este <strong>Creatego</strong>
-          {/* Denumirea juridică completă, cu forma de organizare, se completează
-              aici. Restul datelor sunt confirmate din registrul de stat. */}
-          <span className="legal-todo"> [denumirea juridică completă]</span>, IDNO{" "}
+          Operatorul este <strong>CreativMaro SRL</strong>, IDNO{" "}
           <span className="tabular-nums">1009600037044</span>, cu sediul în str. Calea
-          Ieșilor 16/3, of. 8V, MD-2069, Chișinău, Republica Moldova.
+          Ieșilor 16, nr. 3, ap. 8V, MD-2069, Chișinău, Republica Moldova.{" "}
+          <strong>Zafirok</strong> este marca sub care oferim aplicațiile descrise pe
+          acest site.
+        </p>
+        <p>
+          Plățile pentru abonamente sunt facturate de <strong>Create Go LLC</strong>,
+          7901 4th St N, STE 300, St. Petersburg, FL 33702, Statele Unite, care
+          prelucrează în acest scop numele, adresa de email și datele de facturare. Pentru
+          orice altceva legat de datele tale, operatorul rămâne CreativMaro SRL.
         </p>
         <p>
           Pentru orice întrebare privind datele tale sau pentru exercitarea drepturilor de mai
