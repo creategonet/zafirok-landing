@@ -17,9 +17,12 @@ export default function PrivacyPage() {
     >
       <LegalSection number={1} title="Cine răspunde pentru datele tale">
         <p>
-          Operatorul este <strong>Creatego</strong>, IDNO{" "}
-          <span className="legal-todo">[de completat]</span>, cu sediul în{" "}
-          <span className="legal-todo">[de completat]</span>, Republica Moldova.
+          Operatorul este <strong>Creatego</strong>
+          {/* Denumirea juridică completă, cu forma de organizare, se completează
+              aici. Restul datelor sunt confirmate din registrul de stat. */}
+          <span className="legal-todo"> [denumirea juridică completă]</span>, IDNO{" "}
+          <span className="tabular-nums">1009600037044</span>, cu sediul în str. Calea
+          Ieșilor 16/3, of. 8V, MD-2069, Chișinău, Republica Moldova.
         </p>
         <p>
           Pentru orice întrebare privind datele tale sau pentru exercitarea drepturilor de mai
@@ -109,11 +112,16 @@ export default function PrivacyPage() {
 
       <LegalSection number={4} title="Transferuri în afara Republicii Moldova">
         <p>
-          Furnizorii de mai sus prelucrează date în Statele Unite. Transferul se face în baza
-          <strong> clauzelor contractuale standard</strong>, mecanism admis fără autorizare
+          Furnizorii de mai sus prelucrează date în Statele Unite. Transferul se face în baza{" "}
+          <strong>clauzelor contractuale standard</strong>, mecanism admis fără autorizare
           prealabilă de <strong>art. 46 alin. (2) lit. c)</strong> din Legea nr. 195/2024, iar
           pentru identificatorii publicitari și în baza consimțământului tău explicit,{" "}
           <strong>art. 49 alin. (1) lit. a)</strong>.
+        </p>
+        <p>
+          Documentele și fișierele încărcate în aplicațiile noastre sunt stocate pe servere din{" "}
+          <strong>Franța</strong>. Fiind în Spațiul Economic European, aceste transferuri nu
+          necesită nicio formalitate suplimentară, conform <strong>art. 44 alin. (2)</strong>.
         </p>
         <p>
           Poți cere oricând o copie a garanțiilor aplicate, scriindu-ne la adresa de mai sus.
