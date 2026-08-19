@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { Logo } from "./Logo";
 import { IconArrowRight } from "./icons";
+import { ConsentSettingsButton } from "./ConsentSettingsButton";
 
 export function FinalCTA() {
   return (
@@ -129,9 +130,23 @@ export function FinalCTA() {
           </nav>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-line py-8 text-xs text-slate-600 sm:flex-row">
+        <div className="mt-12 flex flex-col items-center justify-between gap-5 border-t border-line py-8 text-xs text-slate-600 sm:flex-row">
           <span>© 2026 Zafirok. Toate drepturile rezervate.</span>
-          <span>Construit cu grijă, în România.</span>
+          <nav aria-label="Informații juridice" className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2">
+            <a
+              href="/confidentialitate"
+              className="transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire-400"
+            >
+              Confidențialitate
+            </a>
+            <a
+              href="/cookies"
+              className="transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire-400"
+            >
+              Cookie-uri
+            </a>
+            <ConsentSettingsButton className="cursor-pointer text-xs text-slate-600 transition-colors duration-200 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-sapphire-400" />
+          </nav>
         </div>
       </footer>
     </section>
