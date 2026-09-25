@@ -75,8 +75,8 @@ const products = [
 
 export function Products() {
   return (
-    <section id="produse" className="relative scroll-mt-28 py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section id="produse" className="relative scroll-mt-28 py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,17 +87,17 @@ export function Products() {
           <span className="text-xs font-semibold tracking-[0.3em] text-sapphire-300 uppercase">
             Produse
           </span>
-          <h2 className="font-display mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="font-display mt-4 text-[2rem] leading-tight font-bold tracking-tight text-balance text-white min-[380px]:text-4xl md:text-5xl">
             Sisteme specializate.{" "}
             <span className="text-gradient">O singură sursă de adevăr.</span>
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mt-5 text-base leading-relaxed text-slate-400 sm:text-lg">
             Fiecare produs e puternic singur. Împreună, elimină munca dublă,
             Excel-urile paralele și datele pierdute între departamente.
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-4 sm:mt-16 sm:gap-6 md:grid-cols-2">
           {products.map((product, i) => (
             <motion.article
               key={product.name}
@@ -109,7 +109,7 @@ export function Products() {
                 delay: (i % 2) * 0.12,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className={`group relative overflow-hidden rounded-3xl border border-line bg-surface/60 p-8 backdrop-blur-sm transition-colors duration-300 ${product.accentBorder}`}
+              className={`group relative overflow-hidden rounded-3xl border border-line bg-surface/60 p-6 backdrop-blur-sm transition-colors duration-300 sm:p-8 ${product.accentBorder}`}
             >
               <div
                 className={`absolute -top-24 -right-24 h-56 w-56 rounded-full opacity-0 blur-[80px] transition-opacity duration-500 group-hover:opacity-100 ${product.accentGlow}`}
@@ -122,13 +122,13 @@ export function Products() {
                   >
                     <product.icon className="h-7 w-7" />
                   </div>
-                  <span className="rounded-full border border-line px-3 py-1 text-[0.65rem] font-semibold tracking-[0.16em] text-slate-500 uppercase">
+                  <span className="rounded-full border border-line px-3 py-1 text-[0.6875rem] font-semibold tracking-[0.14em] text-slate-400 uppercase">
                     {product.system}
                   </span>
                 </div>
 
                 <div className="mt-6 flex flex-wrap items-center gap-3">
-                  <h3 className="font-display text-2xl font-bold text-white">
+                  <h3 className="font-display text-[1.375rem] font-bold text-white sm:text-2xl">
                     {product.name}
                   </h3>
                   {"comingSoon" in product && product.comingSoon && (
@@ -149,16 +149,16 @@ export function Products() {
                   {product.features.map((feature) => (
                     <li
                       key={feature}
-                      className="flex items-center gap-3 text-sm text-slate-300"
+                      className="flex items-start gap-3 text-sm text-slate-300"
                     >
-                      <IconCheck className={`h-4 w-4 shrink-0 ${product.accentText}`} />
+                      <IconCheck className={`mt-0.5 h-4 w-4 shrink-0 ${product.accentText}`} />
                       {feature}
                     </li>
                   ))}
                 </ul>
 
                 {"comingSoon" in product && product.comingSoon ? (
-                  <span className="mt-8 inline-flex items-center gap-2 text-sm font-semibold text-slate-500">
+                  <span className="mt-6 inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-slate-500">
                     Disponibil în curând
                   </span>
                 ) : (
@@ -166,7 +166,7 @@ export function Products() {
                     href={product.href}
                     target={product.href.startsWith("http") ? "_blank" : undefined}
                     rel={product.href.startsWith("http") ? "noreferrer" : undefined}
-                    className={`mt-8 inline-flex cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
+                    className={`mt-6 inline-flex min-h-11 cursor-pointer items-center gap-2 text-sm font-semibold ${product.accentText} transition-opacity duration-200 hover:opacity-80`}
                   >
                     {product.cta}
                     <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />

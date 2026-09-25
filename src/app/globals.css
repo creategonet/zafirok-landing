@@ -73,6 +73,13 @@ html {
 }
 
 body {
+  /* Plasă de siguranță: un element decorativ prea lat nu mai poate face
+     pagina să alunece lateral pe telefon. `clip`, nu `hidden`: nu creează
+     container de derulare, deci nu strică `position: sticky`. */
+  overflow-x: clip;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  -webkit-tap-highlight-color: transparent;
   background: var(--color-ink);
   color: #cbd5e1;
   font-family: var(--font-sans), system-ui, sans-serif;

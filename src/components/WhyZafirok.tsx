@@ -83,10 +83,10 @@ function Counter({
 
 export function WhyZafirok() {
   return (
-    <section id="ecosistem" className="relative scroll-mt-28 py-28">
-      <div className="absolute top-1/3 left-1/2 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-sapphire-600/10 blur-[140px]" />
+    <section id="ecosistem" className="relative scroll-mt-28 overflow-x-clip py-20 sm:py-28">
+      <div className="absolute top-1/3 left-1/2 h-[420px] w-[min(720px,100%)] -translate-x-1/2 rounded-full bg-sapphire-600/10 blur-[140px]" />
 
-      <div className="relative mx-auto max-w-6xl px-6">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,10 +97,10 @@ export function WhyZafirok() {
           <span className="text-xs font-semibold tracking-[0.3em] text-sapphire-300 uppercase">
             Ecosistem
           </span>
-          <h2 className="font-display mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+          <h2 className="font-display mt-4 text-[2rem] leading-tight font-bold tracking-tight text-balance text-white min-[380px]:text-4xl md:text-5xl">
             Alegi ce ai nevoie. <span className="text-gradient">Extinzi când crești.</span>
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-slate-400">
+          <p className="mt-5 text-base leading-relaxed text-slate-400 sm:text-lg">
             Zafirok este construit modular: activezi doar funcțiile de care are
             nevoie afacerea ta și plătești separat pentru fiecare modul. Când
             adaugi un modul nou, acesta se conectează instant cu datele și
@@ -108,7 +108,7 @@ export function WhyZafirok() {
           </p>
         </motion.div>
 
-        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-12 grid gap-4 sm:mt-16 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3">
           {features.map((feature, i) => (
             <motion.div
               key={feature.title}
@@ -120,7 +120,7 @@ export function WhyZafirok() {
                 delay: (i % 3) * 0.1,
                 ease: [0.22, 1, 0.36, 1],
               }}
-              className="group rounded-2xl border border-line bg-surface/50 p-7 backdrop-blur-sm transition-colors duration-300 hover:border-sapphire-400/30"
+              className="group rounded-2xl border border-line bg-surface/50 p-6 backdrop-blur-sm sm:p-7 transition-colors duration-300 hover:border-sapphire-400/30"
             >
               <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-sapphire-500/10 text-sapphire-300 transition-colors duration-300 group-hover:bg-sapphire-500/20">
                 <feature.icon className="h-5 w-5" />
@@ -140,11 +140,11 @@ export function WhyZafirok() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-60px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-20 grid grid-cols-2 gap-y-10 rounded-3xl border border-line bg-surface/40 px-8 py-12 backdrop-blur-sm lg:grid-cols-4"
+          className="mt-12 grid grid-cols-2 gap-x-4 gap-y-10 rounded-3xl border border-line bg-surface/40 px-4 py-10 backdrop-blur-sm sm:mt-20 sm:px-8 sm:py-12 lg:grid-cols-4"
         >
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="font-display text-gradient text-4xl font-bold md:text-5xl">
+              <div className="font-display text-gradient text-[2rem] font-bold tabular-nums min-[380px]:text-4xl md:text-5xl">
                 <Counter
                   value={stat.value}
                   decimals={stat.decimals}

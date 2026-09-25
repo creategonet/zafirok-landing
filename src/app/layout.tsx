@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
@@ -19,6 +19,15 @@ export const metadata: Metadata = {
   title: "Zafirok — Ecosistem CRM & ERP pentru afacerea ta",
   description:
     "Sisteme specializate pentru CRM, construcții, fabrici, service auto și contabilitate. De la primul contact cu clientul până la bilanț, totul într-un singur ecosistem.",
+};
+
+// `viewport-fit=cover` lasă antetul și subsolul să țină cont de notch și de
+// bara de jos a iPhone-ului, prin `env(safe-area-inset-*)`.
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#05060e",
 };
 
 export default function RootLayout({

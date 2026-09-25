@@ -24,23 +24,23 @@ const modules = ["Proiecte", "Pontaj", "Devize", "Stocuri", "Facturare", "Rapoar
 
 export function CrmErpExplainer() {
   return (
-    <section className="relative py-28">
-      <div className="mx-auto max-w-6xl px-6">
+    <section className="relative py-20 sm:py-28">
+      <div className="mx-auto max-w-6xl px-5 sm:px-6">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, margin: "-80px" }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-          className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr]"
+          className="grid items-center gap-10 sm:gap-14 lg:grid-cols-[0.9fr_1.1fr]"
         >
           <div>
             <span className="text-xs font-semibold tracking-[0.3em] text-sapphire-300 uppercase">
               CRM + ERP
             </span>
-            <h2 className="font-display mt-4 text-4xl font-bold tracking-tight text-white md:text-5xl">
+            <h2 className="font-display mt-4 text-[2rem] leading-tight font-bold tracking-tight text-balance text-white min-[380px]:text-4xl md:text-5xl">
               Toată afacerea, într-un singur <span className="text-gradient">sistem</span>
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-slate-400">
+            <p className="mt-6 text-base leading-relaxed text-slate-400 sm:text-lg">
               CRM-ul gestionează relația cu clientul. ERP-ul organizează resursele și
               operațiunile companiei. Zafirok le conectează prin module independente,
               pe care le activezi în funcție de nevoile și etapa afacerii tale.
@@ -51,7 +51,7 @@ export function CrmErpExplainer() {
             </p>
           </div>
 
-          <div className="relative rounded-3xl border border-line bg-surface/50 p-5 backdrop-blur-sm sm:p-8">
+          <div className="relative rounded-3xl border border-line bg-surface/50 p-4 backdrop-blur-sm sm:p-8">
             <div className="absolute inset-1/4 rounded-full bg-sapphire-500/15 blur-[90px]" />
             <div className="relative grid gap-4 sm:grid-cols-2">
               {layers.map((layer) => (
@@ -68,7 +68,7 @@ export function CrmErpExplainer() {
 
             <div className="relative mx-auto flex h-12 w-px bg-gradient-to-b from-sapphire-400/70 to-violet-400/70" />
             <div className="relative rounded-2xl border border-violet-400/25 bg-violet-400/10 p-5 text-center">
-              <div className="flex items-center justify-center gap-2 text-violet-300">
+              <div className="flex flex-wrap items-center justify-center gap-2 text-violet-300">
                 <IconRefresh className="h-5 w-5" />
                 <span className="font-display font-bold">Zafirok Business System</span>
               </div>

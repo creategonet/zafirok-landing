@@ -119,7 +119,7 @@ function FactoryCluster() {
 
 function OrbitSystem() {
   return (
-    <div className="relative mx-auto aspect-square w-[320px] sm:w-[420px] lg:w-[480px]">
+    <div className="relative aspect-square w-[320px] sm:w-[420px] lg:w-[480px]">
       {/* glow */}
       <div className="absolute inset-8 rounded-full bg-sapphire-600/25 blur-[90px]" />
       <div className="absolute inset-24 rounded-full bg-cyan-500/15 blur-[60px]" />
@@ -189,7 +189,7 @@ const marqueeItems = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden pt-36 pb-0 lg:pt-40">
+    <section className="relative overflow-hidden pt-28 pb-0 sm:pt-36 lg:pt-40">
       {/* background layers */}
       <div className="bg-grid absolute inset-0 [mask-image:radial-gradient(ellipse_70%_60%_at_50%_35%,black_30%,transparent_100%)]" />
       <div
@@ -201,13 +201,13 @@ export function Hero() {
         style={{ animationDuration: "24s", animationDelay: "-8s" }}
       />
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-16 px-6 lg:grid-cols-2 lg:gap-8">
-        <motion.div variants={container} initial="hidden" animate="show">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-8 px-5 sm:gap-12 sm:px-6 lg:grid-cols-2 lg:gap-8">
+        <motion.div variants={container} initial="hidden" animate="show" className="min-w-0">
           <motion.div
             variants={item}
             className="inline-flex items-center gap-2.5 rounded-full border border-line bg-surface/60 px-4 py-2 backdrop-blur-sm"
           >
-            <span className="animate-pulse-dot h-2 w-2 rounded-full bg-sapphire-400" />
+            <span className="animate-pulse-dot h-2 w-2 shrink-0 rounded-full bg-sapphire-400" />
             <span className="text-xs font-medium tracking-wide text-sapphire-200">
               Suita software care crește odată cu afacerea ta
             </span>
@@ -215,7 +215,7 @@ export function Hero() {
 
           <motion.h1
             variants={item}
-            className="font-display mt-6 text-5xl leading-[1.05] font-bold tracking-tight text-white md:text-6xl lg:text-7xl"
+            className="font-display mt-6 text-[2.75rem] leading-[1.05] font-bold tracking-tight text-white min-[380px]:text-5xl md:text-6xl lg:text-7xl"
           >
             Un singur
             <br />
@@ -226,24 +226,24 @@ export function Hero() {
 
           <motion.p
             variants={item}
-            className="mt-6 max-w-lg text-lg leading-relaxed text-slate-400"
+            className="mt-6 max-w-lg text-base leading-relaxed text-slate-400 sm:text-lg"
           >
             Sisteme specializate pentru service auto, contabilitate și
             construcții, cu module care lucrează împreună ca să vezi întreaga
             afacere dintr-o singură privire.
           </motion.p>
 
-          <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
+          <motion.div variants={item} className="mt-9 flex flex-col gap-3 min-[440px]:flex-row min-[440px]:flex-wrap sm:gap-4">
             <a
               href="#contact"
-              className="group flex items-center gap-2 rounded-2xl bg-sapphire-500 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-sapphire-600/40 transition-all duration-200 hover:bg-sapphire-400 hover:shadow-sapphire-500/50"
+              className="group flex items-center justify-center gap-2 rounded-2xl bg-sapphire-500 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-sapphire-600/40 transition-all duration-200 hover:bg-sapphire-400 hover:shadow-sapphire-500/50"
             >
               Solicită un demo
               <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
             <a
               href="#produse"
-              className="rounded-2xl border border-line bg-surface/60 px-7 py-4 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
+              className="flex items-center justify-center rounded-2xl border border-line bg-surface/60 px-7 py-4 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
             >
               Descoperă produsele
             </a>
@@ -269,17 +269,30 @@ export function Hero() {
           </motion.div>
         </motion.div>
 
+        {/*
+          Scena diagramei. Etichetele se rotesc pe cercuri și ies în afara lor cu
+          jumătate din lățime, deci diagrama are nevoie de loc în jur, nu doar de
+          propriul pătrat. Pe telefon e micșorată proporțional (scale nu schimbă
+          așezarea în pagină), iar scena are exact înălțimea ei vizibilă; pe
+          tabletă, unde cercurile cu domenii apar, scena lasă loc deasupra și
+          dedesubt, ca etichetele să nu cadă peste text. Diagrama repetă produsele
+          din secțiunea următoare, deci e ascunsă cititoarelor de ecran.
+        */}
         <motion.div
           initial={{ opacity: 0, scale: 0.85 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.22, 1, 0.36, 1] }}
+          aria-hidden="true"
+          className="relative h-[314px] min-w-0 min-[380px]:h-[366px] min-[440px]:h-[436px] sm:h-[600px] lg:h-[520px]"
         >
-          <OrbitSystem />
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 scale-[0.72] min-[380px]:scale-[0.84] min-[440px]:scale-100">
+            <OrbitSystem />
+          </div>
         </motion.div>
       </div>
 
       {/* marquee */}
-      <div className="relative mt-20 border-y border-line py-5 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
+      <div className="relative mt-10 border-y border-line py-5 sm:mt-16 [mask-image:linear-gradient(to_right,transparent,black_15%,black_85%,transparent)]">
         <div className="animate-marquee flex w-max gap-12">
           {[...marqueeItems, ...marqueeItems].map((label, i) => (
             <span
