@@ -62,7 +62,7 @@ export function SystemCapabilities() {
             {modules.map((module, index) => (
               <div key={module} className="group flex min-h-20 flex-col justify-between rounded-2xl border border-line bg-ink/45 p-4 sm:min-h-24 transition-colors hover:border-sapphire-400/40">
                 <span className="font-display text-xs font-bold text-sapphire-400/60">{String(index + 1).padStart(2, "0")}</span>
-                <span className="mt-4 text-sm font-semibold text-white sm:mt-5">{module}</span>
+                <span className="mt-4 min-w-0 text-sm font-semibold break-words hyphens-auto text-white sm:mt-5">{module}</span>
               </div>
             ))}
           </div>

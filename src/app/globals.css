@@ -85,6 +85,24 @@ body {
   font-family: var(--font-sans), system-ui, sans-serif;
 }
 
+/* Rusa are cuvinte lungi („Специализированные") care nu încap într-un titlu mare
+   pe un ecran de 320px. Titlurile se pot rupe în cuvânt; pe telefon cu cratimă,
+   după limba din <html lang>, pe care o schimbă selectorul de limbă. */
+h1,
+h2,
+h3 {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 639px) {
+  h1,
+  h2,
+  h3 {
+    hyphens: auto;
+    -webkit-hyphens: auto;
+  }
+}
+
 ::selection {
   background: var(--color-sapphire-500);
   color: #fff;
