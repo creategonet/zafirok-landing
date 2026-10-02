@@ -4,6 +4,7 @@ import "./globals.css";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import CookieConsent from "@/components/CookieConsent";
 import MetaPixel from "@/components/MetaPixel";
+import GoogleTag from "@/components/GoogleTag";
 
 const inter = Inter({
   variable: "--font-inter",
@@ -43,11 +44,12 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-ink">
         <LanguageProvider>{children}</LanguageProvider>
         {/*
-          Pixelul se montează doar după consimțământ. Varianta <noscript> a fost
-          eliminată: se încărca necondiționat și nu putea fi condiționată de o
-          alegere, deci prelucra date fără temei.
+          Pixelul Meta și eticheta Google se montează doar după consimțământ.
+          Variantele <noscript> lipsesc intenționat: s-ar încărca necondiționat
+          și nu pot fi condiționate de o alegere, deci ar prelucra date fără temei.
         */}
         <MetaPixel />
+        <GoogleTag />
         <CookieConsent />
       </body>
     </html>

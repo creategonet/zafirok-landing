@@ -16,7 +16,8 @@ import { useCallback, useEffect, useState } from "react";
 import { AnimatePresence, motion, useReducedMotion } from "motion/react";
 
 /** Se incrementează când se schimbă textul sau categoriile, ca să recerem alegerea. */
-export const CONSENT_VERSION = 1;
+// 2: la marketing s-a adăugat Google Ads, deci acordul dat doar pentru Meta nu mai ajunge.
+export const CONSENT_VERSION = 2;
 const STORAGE_KEY = "zafirok_consent";
 
 export interface ConsentChoice {
@@ -179,7 +180,7 @@ export default function CookieConsent() {
                     />
                     <CategoryRow
                       title="Marketing"
-                      description="Măsurarea campaniilor prin Meta. Implică transfer în SUA."
+                      description="Măsurarea campaniilor prin Meta și Google Ads. Implică transfer în SUA."
                       checked={marketing}
                       onChange={setMarketing}
                     />

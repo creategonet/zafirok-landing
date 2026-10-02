@@ -14,7 +14,7 @@ export default function CookiesPage() {
       eyebrow="Cookie-uri"
       title="Ce se salvează în browserul tău"
       intro="Site-ul funcționează complet și dacă refuzi tot ce nu e strict necesar. Nu ascundem opțiunea de refuz și nu îți cerem alegerea din nou la fiecare vizită."
-      updated="19 august 2026"
+      updated="2 octombrie 2026"
     >
       <LegalSection number={1} title="Alegerea ta, oricând">
         <p>
@@ -70,11 +70,16 @@ export default function CookiesPage() {
               "Măsoară câți vizitatori vin din campaniile noastre de promovare și ne ajută să nu arătăm reclame celor care ne-au contactat deja",
               "Meta Platforms Inc., Statele Unite",
             ],
+            [
+              <strong key="google">Google Ads</strong>,
+              "Măsoară câți vizitatori vin din campaniile noastre de promovare și ne ajută să nu arătăm reclame celor care ne-au contactat deja",
+              "Google LLC, Statele Unite",
+            ],
           ]}
         />
         <p>
-          Pixelul transmite adresa IP și identificatori de dispozitiv către Meta, în Statele
-          Unite. De aceea îl tratăm ca transfer internațional și îl pornim doar pe baza
+          Amândouă transmit adresa IP și identificatori de dispozitiv către Meta și Google, în
+          Statele Unite. De aceea le tratăm ca transfer internațional și le pornim doar pe baza
           consimțământului explicit, conform <strong>art. 49 alin. (1) lit. a)</strong> din
           Legea nr. 195/2024. Detalii în{" "}
           <a href="/confidentialitate">Politica de confidențialitate</a>.

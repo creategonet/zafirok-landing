@@ -13,7 +13,7 @@ export default function PrivacyPage() {
       eyebrow="Confidențialitate"
       title="Ce date colectăm și de ce"
       intro="Această pagină se referă la site-ul de prezentare zafirok.com. Aplicațiile Zafirok au fiecare propria politică, fiindcă acolo datele sunt ale clienților noștri, nu ale noastre."
-      updated="19 august 2026"
+      updated="2 octombrie 2026"
     >
       <LegalSection number={1} title="Cine răspunde pentru datele tale">
         <p>
@@ -72,12 +72,12 @@ export default function PrivacyPage() {
               "Doar dacă accepți, maximum 14 luni",
             ],
             [
-              "Identificatori publicitari Meta",
+              "Identificatori publicitari Meta și Google",
               "Măsurarea campaniilor de promovare",
               <>
                 Consimțământ, <strong>art. 6 alin. (1) lit. a)</strong>
               </>,
-              "Doar dacă accepți, conform politicii Meta",
+              "Doar dacă accepți, conform politicilor Meta și Google",
             ],
             [
               "Numele și adresa de email, dacă ne scrii",
@@ -107,6 +107,10 @@ export default function PrivacyPage() {
           <li>
             <strong>Meta Platforms Inc.</strong>, Statele Unite, măsurarea campaniilor, numai cu
             acordul tău.
+          </li>
+          <li>
+            <strong>Google LLC</strong>, Statele Unite, măsurarea campaniilor, numai cu acordul
+            tău.
           </li>
         </ul>
         <p>
