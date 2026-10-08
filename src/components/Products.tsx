@@ -63,13 +63,14 @@ const products = [
     description:
       "Facturare, e-Factura și rapoarte fiscale într-un sistem care închide luna fără nopți pierdute.",
     features: ["Facturare & e-Factura", "Registre și jurnale automate", "Rapoarte fiscale la zi"],
-    comingSoon: true,
+    comingSoon: false,
     icon: IconCalculator,
     accentText: "text-emerald-400",
     accentBg: "bg-emerald-400/10",
     accentBorder: "hover:border-emerald-400/40",
     accentGlow: "bg-emerald-500/20",
-    href: "#contact",
+    href: "https://accounting.zafirok.com/",
+    cta: "Vezi produsul",
   },
 ];
 

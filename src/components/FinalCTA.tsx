@@ -71,7 +71,7 @@ export function FinalCTA() {
             <ul className="mt-3 space-y-0.5 text-sm lg:mt-4 lg:space-y-2.5">
               {[
                 { name: "Zafirok Auto Service", href: "https://auto.zafirok.com/" },
-                { name: "Zafirok Accounting", href: "#produse" },
+                { name: "Zafirok Accounting", href: "https://accounting.zafirok.com/" },
                 { name: "Zafirok Construction", href: "https://construction.zafirok.com/" },
                 { name: "Zafirok Factory", href: "#produse" },
               ].map((product) => (
