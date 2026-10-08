@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { Logo } from "./Logo";
 import { IconArrowRight } from "./icons";
@@ -32,19 +33,19 @@ export function FinalCTA() {
           </p>
 
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 min-[440px]:flex-row min-[440px]:flex-wrap min-[440px]:items-center sm:gap-4">
-            <a
-              href="mailto:support@creatego.net"
+            <Link
+              href="/produse"
               className="group flex items-center justify-center gap-2 rounded-2xl bg-sapphire-500 px-8 py-4 text-sm font-semibold text-white shadow-lg shadow-sapphire-600/40 transition-all duration-200 hover:bg-sapphire-400 hover:shadow-sapphire-500/50"
             >
-              Programează un demo
+              Alege produsul
               <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
-            </a>
-            <a
-              href="mailto:support@creatego.net"
+            </Link>
+            <Link
+              href="/contact"
               className="flex items-center justify-center rounded-2xl border border-line bg-ink/40 px-8 py-4 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
             >
-              Contactează-ne
-            </a>
+              Solicită demo
+            </Link>
           </div>
 
           <p className="mt-6 text-sm text-slate-500">
@@ -70,10 +71,10 @@ export function FinalCTA() {
             </h3>
             <ul className="mt-3 space-y-0.5 text-sm lg:mt-4 lg:space-y-2.5">
               {[
+                { name: "Zafirok Factory", href: "https://factory.zafirok.com/" },
+                { name: "Zafirok Construction", href: "https://construction.zafirok.com/" },
                 { name: "Zafirok Auto Service", href: "https://auto.zafirok.com/" },
                 { name: "Zafirok Accounting", href: "https://accounting.zafirok.com/" },
-                { name: "Zafirok Construction", href: "https://construction.zafirok.com/" },
-                { name: "Zafirok Factory", href: "#produse" },
               ].map((product) => (
                 <li key={product.name}>
                   <a

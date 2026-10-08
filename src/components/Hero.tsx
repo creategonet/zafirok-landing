@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { motion } from "motion/react";
 import { LogoMark } from "./Logo";
 import {
@@ -235,18 +236,18 @@ export function Hero() {
 
           <motion.div variants={item} className="mt-9 flex flex-col gap-3 min-[440px]:flex-row min-[440px]:flex-wrap sm:gap-4">
             <a
-              href="#contact"
+              href="#produse"
               className="group flex items-center justify-center gap-2 rounded-2xl bg-sapphire-500 px-7 py-4 text-sm font-semibold text-white shadow-lg shadow-sapphire-600/40 transition-all duration-200 hover:bg-sapphire-400 hover:shadow-sapphire-500/50"
             >
-              Solicită un demo
+              Alege produsul
               <IconArrowRight className="h-4 w-4 transition-transform duration-200 group-hover:translate-x-1" />
             </a>
-            <a
-              href="#produse"
+            <Link
+              href="/contact"
               className="flex items-center justify-center rounded-2xl border border-line bg-surface/60 px-7 py-4 text-sm font-semibold text-slate-200 backdrop-blur-sm transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
             >
-              Descoperă produsele
-            </a>
+              Solicită demo
+            </Link>
           </motion.div>
 
           <motion.div

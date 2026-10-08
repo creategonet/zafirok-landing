@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
 import { motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Logo } from "./Logo";
 import { IconMenu, IconX } from "./icons";
@@ -44,19 +45,19 @@ export function Navbar() {
             : "border-transparent bg-transparent"
         }`}
       >
-        <a href="/" aria-label="Zafirok — pagina principală" className="shrink-0">
+        <Link href="/" aria-label="Zafirok — pagina principală" className="shrink-0">
           <Logo />
-        </a>
+        </Link>
 
         <nav className="hidden items-center gap-8 md:flex" aria-label="Meniu principal">
           {links.map((link) => (
-            <a
+            <Link
               key={link.href}
               href={link.href}
               className="py-2 text-sm font-medium text-slate-300 transition-colors duration-200 hover:text-white"
             >
               {link.label}
-            </a>
+            </Link>
           ))}
         </nav>
 
@@ -76,12 +77,18 @@ export function Navbar() {
               </button>
             ))}
           </div>
-          <a
-            href="/contact"
+          <Link
+            href="/produse"
             className="hidden rounded-xl bg-sapphire-500 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-200 hover:bg-sapphire-400 sm:block"
           >
+            Alege produsul
+          </Link>
+          <Link
+            href="/contact"
+            className="hidden rounded-xl border border-line px-4 py-2.5 text-sm font-semibold text-slate-200 transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white lg:block"
+          >
             Solicită demo
-          </a>
+          </Link>
           <button
             type="button"
             onClick={() => setOpen((v) => !v)}
@@ -105,23 +112,32 @@ export function Navbar() {
           <ul className="flex flex-col gap-1">
             {links.map((link) => (
               <li key={link.href}>
-                <a
+                <Link
                   href={link.href}
                   onClick={() => setOpen(false)}
                   className="block rounded-lg px-4 py-3.5 text-base font-medium text-slate-200 transition-colors duration-200 hover:bg-white/5 hover:text-white"
                 >
                   {link.label}
-                </a>
+                </Link>
               </li>
             ))}
             <li>
-              <a
-                href="/contact"
+              <Link
+                href="/produse"
                 onClick={() => setOpen(false)}
                 className="mt-2 block rounded-xl bg-sapphire-500 px-4 py-3.5 text-center text-base font-semibold text-white transition-colors duration-200 hover:bg-sapphire-400"
               >
+                Alege produsul
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/contact"
+                onClick={() => setOpen(false)}
+                className="mt-2 block rounded-xl border border-line px-4 py-3.5 text-center text-base font-semibold text-slate-200 transition-colors duration-200 hover:border-sapphire-400/40 hover:text-white"
+              >
                 Solicită demo
-              </a>
+              </Link>
             </li>
           </ul>
           <div className="mt-3 flex items-center justify-between gap-3 border-t border-line px-1 pt-3 sm:hidden">
